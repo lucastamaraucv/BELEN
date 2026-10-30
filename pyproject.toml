@@ -1,0 +1,29 @@
+[project]
+name = "orden-belen"
+version = "0.1.0"
+description = "Replica en Python del sincronizador ORDEN BELEN (CODIGO FUENTE: codigo 1.txt / temporizado.txt)"
+requires-python = ">=3.9"
+dependencies = [
+    "SQLAlchemy>=2.0,<2.1",  # handle_error en el pre-ping (db.py) existe desde 2.0
+    "pyodbc>=4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+orden-belen = "orden_belen.main:main"
+orden-belen-gui = "orden_belen.gui:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

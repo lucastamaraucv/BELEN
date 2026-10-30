@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+*.egg-info/
+logs/
+config/
+build/
+dist/
+
+# Nunca versionar: contraseñas (config SQLite), logs, ejecutables ni DBF con datos de pacientes
+*.db
+*.log
+*.exe
+*.dbf
+*.DBF
+*.cdx
+*.CDX
+*.fpt
+*.FPT
